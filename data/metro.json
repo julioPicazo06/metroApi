@@ -1,0 +1,247 @@
+{
+  "system": {
+    "id": "metro",
+    "name": "Sistema de Transporte Colectivo Metro"
+  },
+  "lines": [
+    {
+      "id": "metro-1",
+      "name": "Línea 1",
+      "color": "#F94F8E",
+      "system_id": "metro",
+      "station_ids": [
+        "metro-observatorio",
+        "metro-tacubaya",
+        "metro-juanacatlan",
+        "metro-chapultepec",
+        "metro-sevilla",
+        "metro-insurgentes",
+        "metro-cuauhtemoc",
+        "metro-balderas",
+        "metro-salto-del-agua",
+        "metro-isabel-la-catolica",
+        "metro-pino-suarez",
+        "metro-merced",
+        "metro-candelaria",
+        "metro-san-lazaro",
+        "metro-moctezuma",
+        "metro-balbuena",
+        "metro-boulevard-puerto-aereo",
+        "metro-gomez-farias",
+        "metro-zaragoza",
+        "metro-pantitlan"
+      ]
+    }
+  ],
+  "stations": [
+    {
+      "id": "metro-observatorio",
+      "name": "Observatorio",
+      "system_ids": ["metro"],
+      "line_ids": ["metro-1"],
+      "lat": 19.398237,
+      "lng": -99.200363,
+      "transfers": []
+    },
+    {
+      "id": "metro-tacubaya",
+      "name": "Tacubaya",
+      "system_ids": ["metro"],
+      "line_ids": ["metro-1", "metro-7", "metro-9"],
+      "lat": 19.403439,
+      "lng": -99.187102,
+      "transfers": [
+        { "system_id": "metro", "line_id": "metro-7" },
+        { "system_id": "metro", "line_id": "metro-9" }
+      ]
+    },
+    {
+      "id": "metro-juanacatlan",
+      "name": "Juanacatlán",
+      "system_ids": ["metro"],
+      "line_ids": ["metro-1"],
+      "lat": 19.41289,
+      "lng": -99.182167,
+      "transfers": []
+    },
+    {
+      "id": "metro-chapultepec",
+      "name": "Chapultepec",
+      "system_ids": ["metro"],
+      "line_ids": ["metro-1"],
+      "lat": 19.420783,
+      "lng": -99.176288,
+      "transfers": [
+        { "system_id": "metrobus", "line_id": "metrobus-7" }
+      ]
+    },
+    {
+      "id": "metro-sevilla",
+      "name": "Sevilla",
+      "system_ids": ["metro"],
+      "line_ids": ["metro-1"],
+      "lat": 19.421916,
+      "lng": -99.17058,
+      "transfers": [
+        { "system_id": "metrobus", "line_id": "metrobus-7" }
+      ]
+    },
+    {
+      "id": "metro-insurgentes",
+      "name": "Insurgentes",
+      "system_ids": ["metro"],
+      "line_ids": ["metro-1"],
+      "lat": 19.423292,
+      "lng": -99.163177,
+      "transfers": [
+        { "system_id": "metrobus", "line_id": "metrobus-1" }
+      ]
+    },
+    {
+      "id": "metro-cuauhtemoc",
+      "name": "Cuauhtémoc",
+      "system_ids": ["metro"],
+      "line_ids": ["metro-1"],
+      "lat": 19.425862,
+      "lng": -99.154701,
+      "transfers": [
+        { "system_id": "metrobus", "line_id": "metrobus-3" }
+      ]
+    },
+    {
+      "id": "metro-balderas",
+      "name": "Balderas",
+      "system_ids": ["metro"],
+      "line_ids": ["metro-1", "metro-3"],
+      "lat": 19.42744,
+      "lng": -99.149036,
+      "transfers": [
+        { "system_id": "metro", "line_id": "metro-3" },
+        { "system_id": "metrobus", "line_id": "metrobus-3" }
+      ]
+    },
+    {
+      "id": "metro-salto-del-agua",
+      "name": "Salto del Agua",
+      "system_ids": ["metro"],
+      "line_ids": ["metro-1", "metro-8"],
+      "lat": 19.426813,
+      "lng": -99.142213,
+      "transfers": [
+        { "system_id": "metro", "line_id": "metro-8" }
+      ]
+    },
+    {
+      "id": "metro-isabel-la-catolica",
+      "name": "Isabel la Católica",
+      "system_ids": ["metro"],
+      "line_ids": ["metro-1"],
+      "lat": 19.426732,
+      "lng": -99.137685,
+      "transfers": []
+    },
+    {
+      "id": "metro-pino-suarez",
+      "name": "Pino Suárez",
+      "system_ids": ["metro"],
+      "line_ids": ["metro-1", "metro-2"],
+      "lat": 19.425336,
+      "lng": -99.132943,
+      "transfers": [
+        { "system_id": "metro", "line_id": "metro-2" }
+      ]
+    },
+    {
+      "id": "metro-merced",
+      "name": "Merced",
+      "system_ids": ["metro"],
+      "line_ids": ["metro-1"],
+      "lat": 19.425558,
+      "lng": -99.124639,
+      "transfers": []
+    },
+    {
+      "id": "metro-candelaria",
+      "name": "Candelaria",
+      "system_ids": ["metro"],
+      "line_ids": ["metro-1", "metro-4"],
+      "lat": 19.428837,
+      "lng": -99.119511,
+      "transfers": [
+        { "system_id": "metro", "line_id": "metro-4" }
+      ]
+    },
+    {
+      "id": "metro-san-lazaro",
+      "name": "San Lázaro",
+      "system_ids": ["metro"],
+      "line_ids": ["metro-1", "metro-b"],
+      "lat": 19.430213,
+      "lng": -99.114833,
+      "transfers": [
+        { "system_id": "metro", "line_id": "metro-b" },
+        { "system_id": "metrobus", "line_id": "metrobus-4" },
+        { "system_id": "metrobus", "line_id": "metrobus-5" }
+      ]
+    },
+    {
+      "id": "metro-moctezuma",
+      "name": "Moctezuma",
+      "system_ids": ["metro"],
+      "line_ids": ["metro-1"],
+      "lat": 19.427218,
+      "lng": -99.110305,
+      "transfers": []
+    },
+    {
+      "id": "metro-balbuena",
+      "name": "Balbuena",
+      "system_ids": ["metro"],
+      "line_ids": ["metro-1"],
+      "lat": 19.423231,
+      "lng": -99.102302,
+      "transfers": []
+    },
+    {
+      "id": "metro-boulevard-puerto-aereo",
+      "name": "Boulevard Puerto Aéreo",
+      "system_ids": ["metro"],
+      "line_ids": ["metro-1"],
+      "lat": 19.41967,
+      "lng": -99.09595,
+      "transfers": []
+    },
+    {
+      "id": "metro-gomez-farias",
+      "name": "Gómez Farías",
+      "system_ids": ["metro"],
+      "line_ids": ["metro-1"],
+      "lat": 19.416472,
+      "lng": -99.09035,
+      "transfers": []
+    },
+    {
+      "id": "metro-zaragoza",
+      "name": "Zaragoza",
+      "system_ids": ["metro"],
+      "line_ids": ["metro-1"],
+      "lat": 19.412344,
+      "lng": -99.08241,
+      "transfers": []
+    },
+    {
+      "id": "metro-pantitlan",
+      "name": "Pantitlán",
+      "system_ids": ["metro"],
+      "line_ids": ["metro-1", "metro-5", "metro-9", "metro-a"],
+      "lat": 19.415359,
+      "lng": -99.072132,
+      "transfers": [
+        { "system_id": "metro", "line_id": "metro-5" },
+        { "system_id": "metro", "line_id": "metro-9" },
+        { "system_id": "metro", "line_id": "metro-a" },
+        { "system_id": "metrobus", "line_id": "metrobus-4" }
+      ]
+    }
+  ]
+}

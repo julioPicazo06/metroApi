@@ -1,0 +1,141 @@
+{
+  "info": {
+    "name": "CDMX Transit API",
+    "description": "Colección de solo lectura para la API de portafolio de Metro y Metrobús de la CDMX. No es una API oficial del gobierno. Importa esta colección y usa {{baseUrl}}.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://127.0.0.1:3000"
+    }
+  ],
+  "item": [
+    {
+      "name": "Get health",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/health",
+        "description": "Comprueba que el servidor está vivo. No consulta el catálogo."
+      }
+    },
+    {
+      "name": "List systems",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/systems",
+        "description": "Lista los sistemas cargados (metro y metrobus). En v1 metrobus no tiene líneas todavía."
+      }
+    },
+    {
+      "name": "List lines",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/lines",
+        "description": "Lista las líneas del catálogo. En v1 solo aparece metro-1."
+      }
+    },
+    {
+      "name": "Get line by id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/lines/metro-1",
+        "description": "Devuelve la Línea 1 del Metro con sus 20 estaciones en orden (Observatorio → Pantitlán)."
+      }
+    },
+    {
+      "name": "Get line not found",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/lines/metro-7",
+        "description": "Línea referenciada en transfers de Tacubaya, pero aún no cargada como catálogo. Debe responder 404."
+      }
+    },
+    {
+      "name": "List stations",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/stations",
+        "description": "Lista todas las estaciones cargadas (v1: las 20 de Línea 1)."
+      }
+    },
+    {
+      "name": "List stations by system",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/stations?system=metro",
+        "description": "Filtra estaciones por sistema. system=metrobus debe devolver lista vacía en v1."
+      }
+    },
+    {
+      "name": "List stations by line",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/stations?line=metro-1",
+        "description": "Estaciones de una línea, en el orden de la línea."
+      }
+    },
+    {
+      "name": "Search stations by name",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/stations?q=pino",
+        "description": "Búsqueda parcial por nombre. pino debe encontrar Pino Suárez."
+      }
+    },
+    {
+      "name": "Search stations ignoring accents",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/stations?q=cuauhtemoc",
+        "description": "La búsqueda no distingue acentos: cuauhtemoc encuentra Cuauhtémoc."
+      }
+    },
+    {
+      "name": "Get station by id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/stations/metro-insurgentes",
+        "description": "Detalle de una estación, incluyendo line_ids, coordenadas y transfers."
+      }
+    },
+    {
+      "name": "Get station not found",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/stations/metro-zocalo",
+        "description": "Estación que aún no está en el JSON. Debe responder 404."
+      }
+    },
+    {
+      "name": "List nearby stations",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/stations/nearby?lat=19.423292&lng=-99.163177&radius_m=1000",
+        "description": "Estaciones a menos de radius_m del punto (aquí, sobre Insurgentes). Si omites radius_m, el default es 1000 metros. Ordenadas por distancia."
+      }
+    },
+    {
+      "name": "Nearby with invalid coordinates",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/stations/nearby?lat=abc&lng=-99.16",
+        "description": "lat/lng inválidos deben responder 400 con { \"error\": \"...\" }."
+      }
+    }
+  ]
+}
